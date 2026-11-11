@@ -41,6 +41,44 @@
   <div class="t bold" style="left:615px;top:580px;font-size:40px;line-height:42.7px">Um heap é uma árvore binária especial<br>onde o pai é sempre maior ou igual aos<br>filhos (Max-Heap) ou menor ou igual<br>(Min-Heap)</div>
 </section>
 
+<!-- ===================== 3. ESTRUTURA DO HEAP (Livro Texto Unid. III) ===================== -->
+<section class="slide">
+  <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
+  <div data-deco="logo" style="left:138px;top:84px;width:48px;height:36px"></div>
+  <div data-deco="chevrons" style="left:1224px;top:86px;width:132px;height:34px"></div>
+  <div data-deco="progress" style="left:138px;top:714px;width:218px;height:34px"></div>
+  <div class="title" style="left:260px;top:92px;width:920px">ESTRUTURA DO HEAP</div>
+  <div class="subtitle" style="top:172px">ÁRVORE BINÁRIA COMPLETA EM VETOR CONTÍGUO</div>
+
+  <div data-deco="card" style="left:96px;top:248px;width:380px;height:330px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:60px;top:222px;width:82px;height:91px" alt=""><div class="hex-num" style="left:60px;top:222px;width:82px;height:91px;font-size:34px">1.</div>
+  <div class="card-box" style="left:96px;top:260px;width:380px;height:305px">
+    <h3>Vetor Contíguo</h3>
+    <p>Armazenado sequencialmente no próprio vetor, <span class="bold">sem ponteiros explícitos</span>.</p>
+    <p>A aritmética de índices economiza memória e favorece a <span class="bold">localidade de cache</span>.</p>
+  </div>
+
+  <div data-deco="card" style="left:530px;top:248px;width:380px;height:330px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:494px;top:222px;width:82px;height:91px" alt=""><div class="hex-num" style="left:494px;top:222px;width:82px;height:91px;font-size:34px">2.</div>
+  <div class="card-box" style="left:530px;top:260px;width:380px;height:305px">
+    <h3>Dominância</h3>
+    <p><span class="bold">Max-Heap:</span> pai ≥ filhos — maior elemento na raiz em <span class="tag">O(1)</span>.</p>
+    <p><span class="bold">Min-Heap:</span> pai ≤ filhos — menor elemento na raiz em <span class="tag">O(1)</span>.</p>
+  </div>
+
+  <div data-deco="card" style="left:964px;top:248px;width:380px;height:330px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:928px;top:222px;width:82px;height:91px" alt=""><div class="hex-num" style="left:928px;top:222px;width:82px;height:91px;font-size:34px">3.</div>
+  <div class="card-box" style="left:964px;top:260px;width:380px;height:305px">
+    <h3>Subida vs. Descida</h3>
+    <p><span class="bold">Inserção:</span> anexa ao final e <span class="bold">sobe</span> até restaurar a regra (<span class="tag">O(log n)</span>).</p>
+    <p><span class="bold">Extração / Heapify:</span> substitui a raiz e <span class="bold">desce</span> comparando filhos (<span class="tag">O(log n)</span>).</p>
+  </div>
+
+  <div class="banner" style="left:120px;top:624px;width:1200px">
+    <span><span class="bold" style="color:#6ce5f8">Build-Max-Heap em tempo linear:</span> descidas sucessivas a partir da metade inferior do vetor concluem em <span class="tag">O(n)</span>.</span>
+  </div>
+</section>
+
 <!-- ===================== 3. PASSO A PASSO — ANTES ===================== -->
 <section class="slide">
   <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
@@ -181,36 +219,40 @@
   <div class="t reg c" style="left:766px;width:400px;top:679px;font-size:40px">Função Heap Sort</div>
 </section>
 
-<!-- ===================== 10. ANÁLISE ASSINTÓTICA ===================== -->
+<!-- ===================== 11. ANÁLISE ASSINTÓTICA ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:84px;width:48px;height:36px"></div>
   <div data-deco="chevrons" style="left:1224px;top:86px;width:132px;height:34px"></div>
   <div data-deco="progress" style="left:138px;top:714px;width:218px;height:34px"></div>
-  <div class="title" style="left:294px;top:102px;width:888px">ANÁLISE ASSINTÓTICA</div>
+  <div class="title" style="left:294px;top:88px;width:888px">ANÁLISE ASSINTÓTICA</div>
 
-  <div data-deco="card" style="left:150px;top:258px;width:282px;height:288px"></div>
-  <img class="hex" src="assets/hex-cyan.png" style="left:81px;top:240px" alt=""><div class="hex-num" style="left:81px;top:240px">1.</div>
-  <div class="t bold c" style="left:200px;width:160px;top:314px;font-size:28px;line-height:29.5px">Melhor<br>caso</div>
-  <div class="t ital c" style="left:180px;width:230px;top:382px;font-size:24px">Vetor já ordenado</div>
-  <div class="t bold c" style="left:200px;width:176px;top:481px;font-size:24px">O(n log n)</div>
+  <div data-deco="card" style="left:150px;top:214px;width:282px;height:280px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:81px;top:196px" alt=""><div class="hex-num" style="left:81px;top:196px">1.</div>
+  <div class="t bold c" style="left:200px;width:160px;top:268px;font-size:28px;line-height:29.5px">Melhor<br>caso</div>
+  <div class="t ital c" style="left:180px;width:230px;top:336px;font-size:24px">Vetor já ordenado</div>
+  <div class="t bold c" style="left:200px;width:176px;top:432px;font-size:24px">O(n log n)</div>
 
-  <div data-deco="card" style="left:564px;top:258px;width:294px;height:296px"></div>
-  <img class="hex" src="assets/hex-cyan.png" style="left:510px;top:240px" alt=""><div class="hex-num" style="left:510px;top:240px">2.</div>
-  <div class="t bold c" style="left:633px;width:160px;top:314px;font-size:28px;line-height:29.5px">Médio<br>Caso</div>
-  <div class="t ital c" style="left:600px;width:254px;top:387px;font-size:24px;line-height:25.5px">Vetor com elementos<br>distintos em ordem<br>aleatória</div>
-  <div class="t bold c" style="left:632px;width:176px;top:481px;font-size:24px">O(n log n)</div>
+  <div data-deco="card" style="left:564px;top:214px;width:294px;height:286px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:510px;top:196px" alt=""><div class="hex-num" style="left:510px;top:196px">2.</div>
+  <div class="t bold c" style="left:633px;width:160px;top:268px;font-size:28px;line-height:29.5px">Médio<br>Caso</div>
+  <div class="t ital c" style="left:600px;width:254px;top:340px;font-size:24px;line-height:25.5px">Vetor com elementos<br>distintos em ordem<br>aleatória</div>
+  <div class="t bold c" style="left:632px;width:176px;top:432px;font-size:24px">O(n log n)</div>
 
-  <div data-deco="card" style="left:996px;top:258px;width:294px;height:296px"></div>
-  <img class="hex" src="assets/hex-cyan.png" style="left:939px;top:240px" alt=""><div class="hex-num" style="left:939px;top:240px">3.</div>
-  <div class="t bold c" style="left:1052px;width:160px;top:314px;font-size:28px;line-height:29.5px">Pior<br>Caso</div>
-  <div class="t ital c" style="left:1019px;width:260px;top:383px;font-size:24px;line-height:25.5px">Vetor com elementos<br>que exige o máximo de<br>trabalho possível</div>
-  <div class="t bold c" style="left:1061px;width:176px;top:481px;font-size:24px">O(n log n)</div>
+  <div data-deco="card" style="left:996px;top:214px;width:294px;height:286px"></div>
+  <img class="hex" src="assets/hex-cyan.png" style="left:939px;top:196px" alt=""><div class="hex-num" style="left:939px;top:196px">3.</div>
+  <div class="t bold c" style="left:1052px;width:160px;top:268px;font-size:28px;line-height:29.5px">Pior<br>Caso</div>
+  <div class="t ital c" style="left:1019px;width:260px;top:336px;font-size:24px;line-height:25.5px">Vetor com elementos<br>que exige o máximo de<br>trabalho possível</div>
+  <div class="t bold c" style="left:1061px;width:176px;top:432px;font-size:24px">O(n log n)</div>
 
-  <div class="t ital c" style="left:330px;width:756px;top:627px;font-size:29px;line-height:31px">O procedimento Heap Sort demora o tempo O(n log n),<br>já que a chamada a Build Max-Heap demora o tempo<br>O(n), e cada uma das n — 1 chamadas a Max-Heapify<br>demora o tempo O(log n).</div>
+  <div class="banner" style="left:150px;top:526px;width:1140px;padding:12px 24px">
+    <span><span class="bold" style="color:#6ce5f8">Complexidade Espacial:</span> <span class="tag">O(1) — In-Place</span> &nbsp;•&nbsp; Opera no próprio vetor original sem memória extra proporcional a <em>n</em> (versão recursiva de <span class="tag">max_heapify</span> usa <span class="tag">O(log n)</span> na pilha).</span>
+  </div>
+
+  <div class="t ital c" style="left:330px;width:756px;top:630px;font-size:27px;line-height:30px">O procedimento Heap Sort demora o tempo O(n log n),<br>já que a chamada a Build Max-Heap demora o tempo<br>O(n), e cada uma das n — 1 chamadas a Max-Heapify<br>demora o tempo O(log n).</div>
 </section>
 
-<!-- ===================== 11. ESTÁVEL OU ADAPTATIVO? ===================== -->
+<!-- ===================== 12. ESTÁVEL OU ADAPTATIVO? ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="chevrons" style="left:1224px;top:86px;width:132px;height:34px"></div>
@@ -218,6 +260,9 @@
   <img src="assets/bolt.png" style="position:absolute;left:140px;top:246px;width:77px;height:123px;opacity:.55" alt="">
   <div class="title" style="left:68px;top:302px;text-align:left;line-height:68px">ESTÁVEL OU<br>ADAPTATIVO?</div>
   <div class="t reg" style="left:69px;top:459px;font-size:41px">Nenhum dos dois!!</div>
+  <div class="note-box" style="left:68px;top:535px;width:515px">
+    <span class="bold" style="color:#6ce5f8">Na prática:</span> irrelevante para chaves simples, mas restritivo quando chaves secundárias exigem preservar a ordem original (Unid. III).
+  </div>
 
   <img src="assets/hex-glass.png" style="position:absolute;left:667px;top:212px;width:65px;height:72px" alt="">
   <div class="t bold c" style="left:667px;width:65px;top:229px;font-size:26px">1.</div>
@@ -230,16 +275,120 @@
   <div class="t reg" style="left:756px;top:515px;font-size:31px;line-height:33px">Não é adaptativo, pois independente<br>da ordem prévia de seus elementos,<br>manterá complexidade assintótica O(n<br>log n).</div>
 </section>
 
-<!-- ===================== 12. GRAPHS ===================== -->
+<!-- ===================== 13. ANÁLISE COMPARATIVA (Unid. II e III) ===================== -->
+<section class="slide">
+  <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
+  <div data-deco="logo" style="left:138px;top:84px;width:48px;height:36px"></div>
+  <div data-deco="chevrons" style="left:1224px;top:86px;width:132px;height:34px"></div>
+  <div data-deco="progress" style="left:138px;top:714px;width:218px;height:34px"></div>
+  <div class="title" style="left:220px;top:88px;width:1000px">ANÁLISE COMPARATIVA</div>
+  <div class="subtitle" style="top:164px">HEAP SORT VS. QUICK SORT E MERGE SORT (UNIDADES II &amp; III)</div>
+
+  <table class="cmp-table" style="left:120px;top:222px;width:1200px">
+    <thead>
+      <tr>
+        <th>Algoritmo</th>
+        <th>Melhor Caso</th>
+        <th>Médio Caso</th>
+        <th>Pior Caso</th>
+        <th>Espaço Extra</th>
+        <th>Estável?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hl">
+        <td>Heap Sort</td>
+        <td class="ok">O(n log n)</td>
+        <td class="ok">O(n log n)</td>
+        <td class="ok">O(n log n)</td>
+        <td class="ok">O(1) <small>(in-place)</small></td>
+        <td class="warn">Não</td>
+      </tr>
+      <tr>
+        <td>Quick Sort</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td class="warn">O(n²)</td>
+        <td>O(log n) <small>(pilha)</small></td>
+        <td class="warn">Não</td>
+      </tr>
+      <tr>
+        <td>Merge Sort</td>
+        <td>O(n log n)</td>
+        <td>O(n log n)</td>
+        <td class="ok">O(n log n)</td>
+        <td class="warn">O(n) <small>(auxiliar)</small></td>
+        <td class="ok">Sim</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="panel" style="left:120px;top:476px;width:580px;height:218px">
+    <h3>Por que usar Heap Sort?</h3>
+    <p>Combina <span class="bold">pior caso garantido O(n log n)</span> (sem risco quadrático do Quick Sort) com <span class="bold">memória constante O(1)</span> (sem o custo O(n) do Merge Sort) — ideal para ambientes com espaço limitado ou necessidade de previsibilidade.</p>
+  </div>
+
+  <div class="panel" style="left:740px;top:476px;width:580px;height:218px">
+    <h3>Limitações na prática</h3>
+    <p>Apesar do acesso quase sequencial ao vetor, suas <span class="bold">constantes de tempo</span> costumam superar as do Quick Sort em cenários médios devido à maior incidência de trocas, além de não manter estabilidade.</p>
+  </div>
+</section>
+
+<!-- ===================== 14. HEAPS NA PRÁTICA & REFERÊNCIAS ===================== -->
+<section class="slide">
+  <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
+  <div data-deco="logo" style="left:138px;top:84px;width:48px;height:36px"></div>
+  <div data-deco="chevrons" style="left:1224px;top:86px;width:132px;height:34px"></div>
+  <div data-deco="progress" style="left:138px;top:714px;width:218px;height:34px"></div>
+  <div class="title" style="left:260px;top:88px;width:920px">HEAPS NA PRÁTICA</div>
+  <div class="subtitle" style="top:164px">APLICAÇÕES REAIS &amp; REFERÊNCIAS DO CONTEÚDO</div>
+
+  <div class="app-list" style="position:absolute;left:96px;top:222px;width:640px">
+    <div class="app-item">
+      <div class="app-badge"><img src="assets/hex-glass.png" alt=""><span>1</span></div>
+      <div>
+        <h4>Filas de Prioridade &amp; Agendadores</h4>
+        <p>Inserção e extração do item prioritário em <span class="tag">O(log n)</span> com acesso imediato ao topo em <span class="tag">O(1)</span>.</p>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-badge"><img src="assets/hex-glass.png" alt=""><span>2</span></div>
+      <div>
+        <h4>Seleção Top-k sem ordenar tudo</h4>
+        <p>Construção em <span class="tag">O(n)</span> seguida de <em>k</em> extrações entrega <span class="tag">O(n + k log n)</span>, superando a ordenação completa.</p>
+      </div>
+    </div>
+    <div class="app-item">
+      <div class="app-badge"><img src="assets/hex-glass.png" alt=""><span>3</span></div>
+      <div>
+        <h4>Sistemas Financeiros (Baixa Latência)</h4>
+        <p>Ranking em tempo real de ativos com maior variação em fluxos contínuos de cotações (Exemplo 4, Unid. III).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="left:774px;top:222px;width:570px;height:472px">
+    <h3>Referências Bibliográficas</h3>
+    <ul class="ref-list">
+      <li><strong>CORMEN, T. H. et al.</strong> <em>Algoritmos: teoria e prática</em>. 4. ed. Rio de Janeiro: LTC, 2024.</li>
+      <li><strong>SEDGEWICK, R.; WAYNE, K.</strong> <em>Algorithms</em>. 4. ed. Reading: Addison-Wesley Professional, 2011.</li>
+      <li><strong>HETLAND, M. L.</strong> <em>Python algorithms: mastering basic algorithms in the Python language</em>. 2. ed. New York: Apress, 2014.</li>
+      <li><strong>WENGROW, J.</strong> <em>A common-sense guide to data structures and algorithms in Python</em>. Vol. 1. Raleigh: Pragmatic Bookshelf, 2024.</li>
+      <li><strong>Material Base:</strong> <em>Algoritmos e Estrutura de Dados em Python</em> — Unidades II (Tópicos 3.1, 4.2) e III (Tópicos 6, 6.2).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 15. GRAPHS ===================== -->
 <section class="slide">
   <div class="gradient-bg"></div>
   <div class="title" style="left:404px;top:67px;width:587px;font-size:111px;line-height:133px">GRAPHS</div>
 </section>
 
-<!-- ===================== 13. (em branco no original) ===================== -->
+<!-- ===================== 16. (em branco no original) ===================== -->
 <section class="slide"><div class="gradient-bg"></div></section>
 
-<!-- ===================== 14. (em branco no original) ===================== -->
+<!-- ===================== 17. (em branco no original) ===================== -->
 <section class="slide"><div class="gradient-bg"></div></section>
 
 </div>
@@ -248,7 +397,7 @@
 <div id="progress"></div>
 <div id="hud">
   <button id="prev" title="Anterior (←)">◀</button>
-  <span id="counter">1 / 14</span>
+  <span id="counter">1 / 17</span>
   <button id="next" title="Próximo (→)">▶</button>
   <button id="fs" title="Tela cheia (F)">⛶</button>
 </div>
