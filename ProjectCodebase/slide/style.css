@@ -1,0 +1,170 @@
+/* =========================================================
+   HEAP SORT — Apresentação (réplica fiel do PDF do Canva)
+   Palco fixo 1440x810 (mesmas coordenadas do PDF), escalado
+   para caber na janela.
+   ========================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: var(--f-raleway-regular);
+  color: #fff;
+}
+
+#viewport {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+#stage {
+  position: relative;
+  width: 1440px; height: 810px;
+  flex: none;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+/* ---------- Slides ---------- */
+.slide {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .45s ease, visibility .45s;
+}
+.slide.active { opacity: 1; visibility: visible; }
+
+.bg { position: absolute; left: 0; width: 1440px; object-fit: cover; pointer-events: none; }
+.bg-circuit { top: -76px; height: 962px; }
+.bg-network { top: -27px; height: 864px; }
+.bg-grid    { top: -45px; height: 900px; }
+
+.shade {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(0,24,80,.65) 0%, rgba(0,24,80,0) 18%, rgba(0,0,0,0) 80%, rgba(70,130,140,.45) 100%),
+    linear-gradient(rgba(10,22,40,.82), rgba(10,22,40,.82));
+}
+.shade.grid {
+  background:
+    linear-gradient(90deg, rgba(0,24,90,.6) 0%, rgba(0,24,80,0) 20%, rgba(0,0,0,0) 80%, rgba(70,130,140,.45) 100%),
+    linear-gradient(rgba(8,24,44,.7), rgba(8,24,44,.7));
+}
+.shade.circuit {
+  background:
+    radial-gradient(ellipse at 100% 60%, rgba(120,60,20,.25), transparent 55%),
+    linear-gradient(rgba(6,16,26,.74), rgba(6,16,26,.74));
+}
+.gradient-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, #00184f 0%, #1b3860 45%, #3c5f6c 100%);
+}
+
+/* ---------- Tipografia ---------- */
+.t { position: absolute; white-space: nowrap; line-height: 1.17; }
+.c { text-align: center; }
+.r { text-align: right; }
+
+.title {
+  position: absolute;
+  font-family: var(--f-hkmodular-bold);
+  font-size: 55px; line-height: 66px;
+  text-align: center; white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 4px 14px rgba(0,0,0,.6);
+  letter-spacing: 1px;
+}
+
+.reg  { font-family: var(--f-raleway-regular); }
+.bold { font-family: var(--f-raleway-bold); font-weight: normal; }
+.ital { font-family: var(--f-raleway-italic); font-style: normal; }
+.os   { font-family: var(--f-opensans-regular); }
+.os-b { font-family: var(--f-opensans-bold); }
+.os-i { font-family: var(--f-opensans-italic); }
+.os-bi{ font-family: var(--f-opensans-bolditalic); }
+.times { font-family: "Times New Roman", Times, serif; }
+u { text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.bullet { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+
+/* ---------- Árvores (heap) ---------- */
+.tree { position: absolute; inset: 0; pointer-events: none; }
+.tree svg { position: absolute; inset: 0; }
+.node {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+.idx {
+  position: absolute;
+  font-family: "Times New Roman", Times, serif;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/* ---------- Blocos de código (estilo VS Code escuro) ---------- */
+.code {
+  position: absolute;
+  background: #141414;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  color: #d4d4d4;
+  white-space: pre;
+  padding: 18px 22px;
+}
+.code .k  { color: #f07178; }   /* void, for */
+.code .ci { color: #b392f0; }   /* if */
+.code .ty { color: #f78c6c; }   /* int */
+.code .fn { color: #c3a6ff; }   /* nomes de função */
+.code .v  { color: #f3b562; }   /* parâmetros */
+.code .n  { color: #b5e48c; }   /* números */
+.code .b1 { color: #ffd700; }
+.code .b2 { color: #da70d6; }
+.code .b3 { color: #179fff; }
+.code .g  { border-left: 1px solid #3a3a3a; }
+
+/* trecho trocar() do slide 5 (texto do Canva, não screenshot) */
+.snip { position: absolute; font-size: 28px; line-height: 29.3px; white-space: pre; }
+.snip .o { color: #e76346; }
+.snip .p { color: #8076b8; }
+.snip .y { color: #c68e48; }
+
+/* ---------- Decorações ---------- */
+.deco { position: absolute; pointer-events: none; overflow: visible; }
+
+/* ---------- Cards análise assintótica ---------- */
+.hex { position: absolute; width: 106px; height: 118px; }
+.hex-num {
+  position: absolute; width: 106px; height: 118px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-raleway-bold); font-size: 42px;
+}
+
+/* ---------- HUD de navegação ---------- */
+#hud {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 10px;
+  font: 14px/1 system-ui, sans-serif;
+  color: #cfe;
+  opacity: 0; transition: opacity .3s;
+  z-index: 10;
+}
+body:hover #hud { opacity: .85; }
+#hud button {
+  background: rgba(0,40,60,.7); color: #bff; border: 1px solid #1fb5c9;
+  border-radius: 6px; padding: 6px 12px; cursor: pointer; font: inherit;
+}
+#hud button:hover { background: rgba(0,90,110,.8); }
+#progress {
+  position: fixed; left: 0; bottom: 0; height: 3px;
+  background: linear-gradient(90deg, #0fc3d6, #19e3b0);
+  transition: width .3s; z-index: 11;
+}
