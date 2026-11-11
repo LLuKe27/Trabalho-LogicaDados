@@ -1,45 +1,101 @@
-/* Fontes extraídas do PDF original (subconjuntos do Canva).
-   Cada família encadeia os subconjuntos para fallback por glifo. */
-@font-face { font-family: "HKModular-Bold-0"; src: url("fonts/HKModular-Bold_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "HKModular-Bold-1"; src: url("fonts/HKModular-Bold_1.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "HKModular-Bold-2"; src: url("fonts/HKModular-Bold_2.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "HKModular-Bold-9"; src: url("fonts/HKModular-Bold_9.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "HKModular-Bold-10"; src: url("fonts/HKModular-Bold_10.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "HKModular-Bold-11"; src: url("fonts/HKModular-Bold_11.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "OpenSans-BoldItalic-0"; src: url("fonts/OpenSans-BoldItalic_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "OpenSans-Bold-0"; src: url("fonts/OpenSans-Bold_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "OpenSans-Italic-0"; src: url("fonts/OpenSans-Italic_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "OpenSans-Regular-0"; src: url("fonts/OpenSans-Regular_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-0"; src: url("fonts/Raleway-Bold_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-1"; src: url("fonts/Raleway-Bold_1.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-2"; src: url("fonts/Raleway-Bold_2.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-3"; src: url("fonts/Raleway-Bold_3.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-4"; src: url("fonts/Raleway-Bold_4.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-5"; src: url("fonts/Raleway-Bold_5.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-6"; src: url("fonts/Raleway-Bold_6.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-7"; src: url("fonts/Raleway-Bold_7.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-8"; src: url("fonts/Raleway-Bold_8.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-9"; src: url("fonts/Raleway-Bold_9.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-10"; src: url("fonts/Raleway-Bold_10.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Bold-11"; src: url("fonts/Raleway-Bold_11.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Italic-0"; src: url("fonts/Raleway-Italic_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Italic-1"; src: url("fonts/Raleway-Italic_1.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Italic-2"; src: url("fonts/Raleway-Italic_2.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-0"; src: url("fonts/Raleway-Regular_0.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-1"; src: url("fonts/Raleway-Regular_1.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-2"; src: url("fonts/Raleway-Regular_2.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-3"; src: url("fonts/Raleway-Regular_3.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-4"; src: url("fonts/Raleway-Regular_4.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-5"; src: url("fonts/Raleway-Regular_5.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-6"; src: url("fonts/Raleway-Regular_6.ttf") format("truetype"); font-display: block; }
-@font-face { font-family: "Raleway-Regular-7"; src: url("fonts/Raleway-Regular_7.ttf") format("truetype"); font-display: block; }
+/* =========================================================
+   Tipografia Apple SF Pro (Display, Text & Rounded)
+   Arquivos locais em fonts-sf/ selecionados por função visual.
+   ========================================================= */
+
+/* ---------- SF Pro Display (Títulos, Subtítulos, Cabeçalhos) ---------- */
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts-sf/SF-Pro-Display-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts-sf/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts-sf/SF-Pro-Display-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts-sf/SF-Pro-Display-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("fonts-sf/SF-Pro-Display-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: block;
+}
+
+/* ---------- SF Pro Text (Corpo de texto, Listas, Legendas, Tabelas) ---------- */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("fonts-sf/SF-Pro-Text-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("fonts-sf/SF-Pro-Text-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("fonts-sf/SF-Pro-Text-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("fonts-sf/SF-Pro-Text-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("fonts-sf/SF-Pro-Text-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+/* ---------- SF Pro Rounded (Nós numéricos, Vetores, Índices, Métricas, Eixos) ---------- */
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("fonts-sf/SF-Pro-Rounded-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: "SF Pro Rounded";
+  src: url("fonts-sf/SF-Pro-Rounded-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
 :root {
-  --f-hkmodular-bold: "HKModular-Bold-0", "HKModular-Bold-1", "HKModular-Bold-2", "HKModular-Bold-9", "HKModular-Bold-10", "HKModular-Bold-11", "Orbitron", sans-serif;
-  --f-opensans-bolditalic: "OpenSans-BoldItalic-0", "Open Sans", sans-serif;
-  --f-opensans-bold: "OpenSans-Bold-0", "Open Sans", sans-serif;
-  --f-opensans-italic: "OpenSans-Italic-0", "Open Sans", sans-serif;
-  --f-opensans-regular: "OpenSans-Regular-0", "Open Sans", sans-serif;
-  --f-raleway-bold: "Raleway-Bold-0", "Raleway-Bold-1", "Raleway-Bold-2", "Raleway-Bold-3", "Raleway-Bold-4", "Raleway-Bold-5", "Raleway-Bold-6", "Raleway-Bold-7", "Raleway-Bold-8", "Raleway-Bold-9", "Raleway-Bold-10", "Raleway-Bold-11", "Raleway", sans-serif;
-  --f-raleway-italic: "Raleway-Italic-0", "Raleway-Italic-1", "Raleway-Italic-2", "Raleway", sans-serif;
-  --f-raleway-regular: "Raleway-Regular-0", "Raleway-Regular-1", "Raleway-Regular-2", "Raleway-Regular-3", "Raleway-Regular-4", "Raleway-Regular-5", "Raleway-Regular-6", "Raleway-Regular-7", "Raleway", sans-serif;
+  --f-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --f-text: "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --f-rounded: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --f-mono: "Cascadia Mono", Consolas, "Courier New", monospace;
 }
