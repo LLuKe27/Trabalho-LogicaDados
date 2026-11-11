@@ -32,7 +32,7 @@
   <div class="title" style="left:230px;top:76px;width:980px">ORIGEM &amp; CONCEITO</div>
 
   <div class="t disp-ital c" style="left:170px;width:1100px;top:188px;font-size:33px;line-height:1.3;color:#d6f1fb;white-space:normal">
-    Criado por J. W. J. Williams, em 1964;<br>O procedimento <span class="bold" style="font-style:normal;color:#7ae8fa">Build-Max-Heap</span> foi sugerido por Robert Floyd
+    Criado por John W. J. Williams, em 1964;<br>O procedimento <span class="bold" style="font-style:normal;color:#7ae8fa">Build-Max-Heap</span> foi sugerido por Robert Floyd
   </div>
 
   <span class="bullet" style="left:178px;top:362px"></span>
@@ -139,7 +139,75 @@
   <div data-vec="9,35,20,19,3,5,62" data-compact="1" data-sorted="6" style="left:790px;top:636px"></div>
 </section>
 
-<!-- ===================== 6. CÓDIGO EM C — trocar & max_heapify ===================== -->
+<!-- ===================== 6. OBJETIVO & APLICAÇÕES ===================== -->
+<section class="slide">
+  <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
+  <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
+  <div data-deco="chevrons" style="left:1224px;top:80px;width:132px;height:34px"></div>
+  <div class="title" style="left:230px;top:58px;width:980px">OBJETIVO &amp; APLICAÇÕES</div>
+  <div class="subtitle" style="top:128px">DA ORDENAÇÃO CRESCENTE A RECURSOS DE SOFTWARES REAIS</div>
+
+  <!-- Coluna 1: Objetivo principal + 3 exemplos simples -->
+  <div class="panel" style="left:72px;top:184px;width:634px;height:148px">
+    <h3>Objetivo principal</h3>
+    <p style="font-size:19.5px;line-height:1.42"><span class="bold" style="color:#ffffff">Ser um algoritmo de ordenação crescente</span> — ordena dados do menor ao maior valor em <span class="tag">O(n log n)</span> e memória <span class="tag">O(1)</span>.</p>
+  </div>
+
+  <div class="panel" style="left:72px;top:350px;width:634px;height:408px">
+    <h3>Exemplos simples</h3>
+    <div class="ex-list">
+      <div class="ex-item">
+        <div class="ex-title"><span class="ex-num">1.</span> Vetor numérico</div>
+        <div class="ex-flow">
+          <span class="ex-arr">[20, 35, 62, 19, 3]</span>
+          <span class="ex-arrow">→</span>
+          <span class="ex-arr sorted">[3, 19, 20, 35, 62]</span>
+        </div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-title"><span class="ex-num">2.</span> Pontuações de avaliação</div>
+        <div class="ex-flow">
+          <span class="ex-arr">[84, 52, 96, 70]</span>
+          <span class="ex-arrow">→</span>
+          <span class="ex-arr sorted">[52, 70, 84, 96]</span>
+        </div>
+      </div>
+      <div class="ex-item">
+        <div class="ex-title"><span class="ex-num">3.</span> Preços de catálogo (R$)</div>
+        <div class="ex-flow">
+          <span class="ex-arr">[240, 79, 150, 45]</span>
+          <span class="ex-arrow">→</span>
+          <span class="ex-arr sorted">[45, 79, 150, 240]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Coluna 2: Casos de uso reais em features de softwares conhecidos -->
+  <div class="panel" style="left:734px;top:184px;width:634px;height:574px">
+    <h3>Casos reais em softwares conhecidos</h3>
+    <div class="interp-list" style="gap:16px;margin-top:14px">
+      <div class="interp-row" style="--accent:#34d399;padding:14px 17px">
+        <h4 style="font-size:18.5px;margin-bottom:5px">Spotify · <span class="tag" style="font-size:.86em">Top Músicas &amp; Playlists</span></h4>
+        <p style="font-size:17px;line-height:1.36">Rankings e playlists ordenam só as faixas líderes com seleção <span class="tag">Top-K</span> via <em>heap</em>, sem ordenar todo o catálogo.</p>
+      </div>
+      <div class="interp-row" style="--accent:#fb7185;padding:14px 17px">
+        <h4 style="font-size:18.5px;margin-bottom:5px">Netflix · <span class="tag" style="font-size:.86em">Top 10 &amp; Recomendações</span></h4>
+        <p style="font-size:17px;line-height:1.36">Fileiras como <em>Top 10 Hoje</em> ranqueiam os títulos de maior pontuação com fila por <em>heap</em> em milissegundos.</p>
+      </div>
+      <div class="interp-row" style="--accent:#38bdf8;padding:14px 17px">
+        <h4 style="font-size:18.5px;margin-bottom:5px">Google Maps / Uber · <span class="tag" style="font-size:.86em">Rotas &amp; Mais Próximos</span></h4>
+        <p style="font-size:17px;line-height:1.36">Buscam menores trajetos e motoristas próximos mantendo as menores distâncias ordenadas na raiz do <em>heap</em>.</p>
+      </div>
+      <div class="interp-row" style="--accent:#fbbf24;padding:14px 17px">
+        <h4 style="font-size:18.5px;margin-bottom:5px">YouTube · <span class="tag" style="font-size:.86em">Aba Em Alta</span></h4>
+        <p style="font-size:17px;line-height:1.36">Processa fluxos contínuos de acessos com <em>min-heap</em> para manter apenas os vídeos virais ordenados no topo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 7. CÓDIGO EM C — trocar & max_heapify ===================== -->
 <section class="slide">
   <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -180,7 +248,7 @@
 <span class="b1">}</span></pre>
 </section>
 
-<!-- ===================== 7. CÓDIGO EM C — build_heap & heapSort ===================== -->
+<!-- ===================== 8. CÓDIGO EM C — build_heap & heapSort ===================== -->
 <section class="slide">
   <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -220,7 +288,7 @@
   </div>
 </section>
 
-<!-- ===================== 8. CÓDIGO EM C — PONTEIROS E MEMÓRIA ===================== -->
+<!-- ===================== 9. CÓDIGO EM C — PONTEIROS E MEMÓRIA ===================== -->
 <section class="slide">
   <img class="bg bg-network" src="assets/bg-network.jpg" alt=""><div class="shade"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -270,7 +338,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 9. ANÁLISE ASSINTÓTICA ===================== -->
+<!-- ===================== 10. ANÁLISE ASSINTÓTICA ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -305,7 +373,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 10. ESTÁVEL OU ADAPTATIVO? ===================== -->
+<!-- ===================== 11. ESTÁVEL OU ADAPTATIVO? ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -337,7 +405,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 11. METODOLOGIA — OS 5 CENÁRIOS ===================== -->
+<!-- ===================== 12. METODOLOGIA — OS 5 CENÁRIOS ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -384,7 +452,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 12. GRÁFICO 1 — CURVA DE DESEMPENHO (MOCK) ===================== -->
+<!-- ===================== 13. GRÁFICO 1 — CURVA DE DESEMPENHO (MOCK) ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -405,7 +473,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 13. GRÁFICO 2 — COMPARATIVO & INTERPRETAÇÃO (MOCK) ===================== -->
+<!-- ===================== 14. GRÁFICO 2 — COMPARATIVO & INTERPRETAÇÃO (MOCK) ===================== -->
 <section class="slide">
   <img class="bg bg-grid" src="assets/bg-grid.jpg" alt=""><div class="shade grid"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -442,7 +510,7 @@ v = NULL;  <span class="cm">// Evita ponteiro pendente (dangling)</span></pre>
   </div>
 </section>
 
-<!-- ===================== 14. COMPILAÇÃO & DEMONSTRAÇÃO AO VIVO ===================== -->
+<!-- ===================== 15. COMPILAÇÃO & DEMONSTRAÇÃO AO VIVO ===================== -->
 <section class="slide">
   <img class="bg bg-circuit" src="assets/bg-circuit.jpg" alt=""><div class="shade circuit"></div>
   <div data-deco="logo" style="left:138px;top:78px;width:48px;height:36px"></div>
@@ -494,7 +562,7 @@ gcc -Wall -Wextra -O2 heapSort.c -o heapsort
 <div id="progress"></div>
 <div id="hud">
   <button id="prev" title="Anterior (←)">◀</button>
-  <span id="counter">1 / 14</span>
+  <span id="counter">1 / 15</span>
   <button id="next" title="Próximo (→)">▶</button>
   <button id="fs" title="Tela cheia (F)">⛶</button>
 </div>

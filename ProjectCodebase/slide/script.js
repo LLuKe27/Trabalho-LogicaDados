@@ -254,7 +254,7 @@
     });
   });
 
-  /* ---------- Gráficos Mock SVG (Slides 12 e 13) ---------- */
+  /* ---------- Gráficos Mock SVG (Slides 13 e 14) ---------- */
   function renderCharts() {
     const legendEl = document.getElementById('line-legend');
     if (legendEl) {
